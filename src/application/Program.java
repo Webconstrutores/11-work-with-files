@@ -9,27 +9,13 @@ public class Program {
 
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Enter a folder path: ");
+		System.out.print("Enter a file path: ");
 		String strPath = sc.nextLine();
 		
-		// Listing folders
 		File path = new File(strPath);
-		File[] folders = path.listFiles(File::isDirectory);
-		
-		System.out.println("Folders: ");
-		for(File folder : folders) {
-			System.out.println(folder);
-		}
-		
-		// Listing files
-		File[] files = path.listFiles(File::isFile);
-		for (File file: files) {
-			System.out.println(file);
-		}
-		
-		// Creating folder 
-		boolean success = new File(strPath + ".\\createdFolder").mkdir();
-		System.out.println("Directory created successfully: " + success);
+		System.out.println("getName: " + path.getName());
+		System.out.println("getName: " + path.getParent());
+		System.out.println("getName: " + path.getPath());
 		
 		sc.close();
 	}
